@@ -8,7 +8,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import nl.kingdev.testmod.init.ModBlocks;
 import net.minecraft.block.Block;
@@ -21,7 +23,7 @@ import javax.annotation.Nullable;
 public class TestBlock extends Block implements ITileEntityProvider {
 
     public TestBlock() {
-        super(Material.ROCK);
+        super(Material.CLOTH);
         setRegistryName("testblock");
         setUnlocalizedName("testblock");
         setCreativeTab(CreativeTabs.MISC);
@@ -56,6 +58,34 @@ public class TestBlock extends Block implements ITileEntityProvider {
 
         return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
     }
+
+
+    @Override
+    public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
+        // If it will harvest, delay deletion of the block until after getDrops.
+        return willHarvest || super.removedByPlayer(state, world, pos, player, false);
+    }
+
+    @Override
+    public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
+
+        TileEntity tileEntity = world.getTileEntity(pos);
+        if(tileEntity != null && tileEntity instanceof TileEntityTest) {
+            TileEntityTest tileEntityTest = (TileEntityTest) tileEntity;
+            drops.add(tileEntityTest.getItem());
+            }
+
+        super.getDrops(drops, world, pos, state, fortune);
+
+    }
+
+    @Override
+    public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
+        super.harvestBlock(worldIn, player, pos, state, te, stack);
+        worldIn.setBlockToAir(pos);
+    }
+
+
 
     @Nullable
     @Override

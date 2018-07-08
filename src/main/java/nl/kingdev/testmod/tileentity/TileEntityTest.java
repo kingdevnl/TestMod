@@ -5,6 +5,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import nl.kingdev.testmod.init.ModBlocks;
 
 public class TileEntityTest extends TileEntity {
 
@@ -44,4 +45,22 @@ public class TileEntityTest extends TileEntity {
         super.readFromNBT(compound);
         diamondCount = compound.getInteger("diamondCount");
     }
+
+    public ItemStack getItem() {
+        ItemStack stack = new ItemStack(ModBlocks.testBlock);
+        NBTTagCompound tileEntityData = new NBTTagCompound();
+        writeToNBT(tileEntityData);
+        tileEntityData.removeTag("x");
+        tileEntityData.removeTag("y");
+        tileEntityData.removeTag("z");
+
+        NBTTagCompound stackTag = new NBTTagCompound();
+        stackTag.setTag("BlockEntityTag", tileEntityData);
+        stack.setTagCompound(stackTag);
+
+
+
+        return stack;
+    }
+
 }
