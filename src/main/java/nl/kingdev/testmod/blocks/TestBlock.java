@@ -46,7 +46,9 @@ public class TestBlock extends Block {
                 return true;
             }
             if (heldItem.getItem() == Items.AIR) {
-                tileEntityTest.removeDiamond();
+                if(tileEntityTest.diamondCount >= 1) {
+                    tileEntityTest.removeDiamond();
+                }
                 return true;
             }
 

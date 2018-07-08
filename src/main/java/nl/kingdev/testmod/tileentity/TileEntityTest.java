@@ -12,17 +12,18 @@ import nl.kingdev.testmod.init.ModBlocks;
 
 public class TileEntityTest extends TileEntity {
 
-    private int diamondCount = 0;
+    public int diamondCount = 0;
 
     public boolean addDiamond() {
 
-        if (diamondCount < 8) {
+        if(diamondCount > 0 && diamondCount <= 5) {
             diamondCount++;
             this.markDirty();
             IBlockState state = world.getBlockState(pos);
             world.notifyBlockUpdate(pos, state, state,3);
             return true;
         }
+
         return false;
 
     }
@@ -44,12 +45,14 @@ public class TileEntityTest extends TileEntity {
 
     @Override
     public NBTTagCompound writeToNBT(NBTTagCompound compound) {
+        super.writeToNBT(compound);
         this.writeUpdateTag(compound);
         return compound;
     }
 
     @Override
     public void readFromNBT(NBTTagCompound compound) {
+        super.readFromNBT(compound);
         this.readUpdateTag(compound);
     }
 
