@@ -1,7 +1,5 @@
-package me.kingzgames.testmod.proxy;
+package nl.kingdev.testmod.proxy;
 
-import me.kingzgames.testmod.init.ModBlocks;
-import me.kingzgames.testmod.init.ModItems;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;

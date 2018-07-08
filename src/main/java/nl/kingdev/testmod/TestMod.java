@@ -1,8 +1,8 @@
-package me.kingzgames.testmod;
+package nl.kingdev.testmod;
 
-import me.kingzgames.testmod.init.ModBlocks;
-import me.kingzgames.testmod.init.ModItems;
-import me.kingzgames.testmod.proxy.CommonProxy;
+import nl.kingdev.testmod.init.ModBlocks;
+import nl.kingdev.testmod.init.ModItems;
+import nl.kingdev.testmod.proxy.CommonProxy;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -26,8 +26,8 @@ public class TestMod {
 
     @SidedProxy(
             modId = TestMod.modID,
-            clientSide = "me.kingzgames.testmod.proxy.ClientProxy",
-            serverSide = "me.kingzgames.testmod.proxy.ServerProxy")
+            clientSide = "nl.kingdev.testmod.proxy.ClientProxy",
+            serverSide = "nl.kingdev.testmod.proxy.ServerProxy")
     private static CommonProxy proxy;
 
 

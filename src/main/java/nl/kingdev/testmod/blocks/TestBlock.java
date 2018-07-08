@@ -1,6 +1,6 @@
-package me.kingzgames.testmod.blocks;
+package nl.kingdev.testmod.blocks;
 
-import me.kingzgames.testmod.init.ModBlocks;
+import nl.kingdev.testmod.init.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;

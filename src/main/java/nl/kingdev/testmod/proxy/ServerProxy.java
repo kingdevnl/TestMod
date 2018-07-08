@@ -1,4 +1,4 @@
-package me.kingzgames.testmod.proxy;
+package nl.kingdev.testmod.proxy;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;

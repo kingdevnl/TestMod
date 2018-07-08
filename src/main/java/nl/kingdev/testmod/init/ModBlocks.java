@@ -1,6 +1,6 @@
-package me.kingzgames.testmod.init;
+package nl.kingdev.testmod.init;
 
-import me.kingzgames.testmod.blocks.TestBlock;
+import nl.kingdev.testmod.blocks.TestBlock;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;

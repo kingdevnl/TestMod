@@ -1,13 +1,12 @@
-package me.kingzgames.testmod.init;
+package nl.kingdev.testmod.init;
 
-import me.kingzgames.testmod.items.TestItem;
+import nl.kingdev.testmod.items.TestItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class ModItems {

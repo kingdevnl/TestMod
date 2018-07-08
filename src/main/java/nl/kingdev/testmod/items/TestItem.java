@@ -1,6 +1,6 @@
-package me.kingzgames.testmod.items;
+package nl.kingdev.testmod.items;
 
-import me.kingzgames.testmod.init.ModItems;
+import nl.kingdev.testmod.init.ModItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
