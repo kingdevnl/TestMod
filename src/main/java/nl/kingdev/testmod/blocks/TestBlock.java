@@ -1,6 +1,7 @@
 package nl.kingdev.testmod.blocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
@@ -28,6 +29,8 @@ public class TestBlock extends Block {
         setCreativeTab(CreativeTabs.MISC);
         ModBlocks.getModBlocks().add(this);
         setHardness(0.5f);
+        setLightLevel(1.5f);
+        setSoundType(SoundType.CLOTH);
     }
 
 
