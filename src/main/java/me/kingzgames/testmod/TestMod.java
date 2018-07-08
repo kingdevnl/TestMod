@@ -17,7 +17,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Mod(name = "TestMod", modid = Reference.modID)
+@Mod(name = Reference.modName, modid = Reference.modID, version = Reference.modVersion)
 public class TestMod {
 
 
