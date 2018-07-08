@@ -36,7 +36,7 @@ public class TileEntityTest extends TileEntity {
 
         super.writeToNBT(compound);
         compound.setInteger("diamondCount", diamondCount);
-
+        this.markDirty();
         return compound;
     }
 
@@ -44,6 +44,7 @@ public class TileEntityTest extends TileEntity {
     public void readFromNBT(NBTTagCompound compound) {
         super.readFromNBT(compound);
         diamondCount = compound.getInteger("diamondCount");
+        this.markDirty();
     }
 
     public ItemStack getItem() {
@@ -63,4 +64,8 @@ public class TileEntityTest extends TileEntity {
         return stack;
     }
 
+    public String getDiamondCount() {
+
+        return String.valueOf(diamondCount);
+    }
 }
