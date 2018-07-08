@@ -22,7 +22,11 @@ public class TileEntityTest extends TileEntity {
     public void removeDiamond() {
         if(diamondCount > 0) {
             diamondCount--;
-            world.spawnEntity(new EntityItem(world, pos.getX(), pos.getY()+1, pos.getZ(), new ItemStack(Items.DIAMOND)));
+            if(!world.isRemote) {
+
+                world.spawnEntity(new EntityItem(world, pos.getX(), pos.getY()+1+world.rand.nextInt(1), pos.getZ(), new ItemStack(Items.DIAMOND)));
+            }
+
         }
     }
 

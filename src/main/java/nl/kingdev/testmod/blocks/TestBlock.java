@@ -38,6 +38,11 @@ public class TestBlock extends Block implements ITileEntityProvider {
             ItemStack heldItem = playerIn.getHeldItem(hand);
             if(playerIn.isSneaking()) {
                 tileEntityTest.removeDiamond();
+                return true;
+            }
+            if(heldItem.getItem() == Items.AIR) {
+                tileEntityTest.removeDiamond();
+                return true;
             }
 
             if(heldItem.getItem() == Items.DIAMOND) {
