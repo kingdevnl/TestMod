@@ -1,5 +1,6 @@
 package nl.kingdev.testmod;
 
+import net.minecraft.tileentity.TileEntity;
 import nl.kingdev.testmod.init.ModBlocks;
 import nl.kingdev.testmod.init.ModItems;
 import nl.kingdev.testmod.proxy.CommonProxy;
@@ -65,14 +66,13 @@ public class TestMod {
 
         @SubscribeEvent
         public void onBlockReg(RegistryEvent.Register<Block> event) {
-            event.getRegistry().register(ModBlocks.testBlock);
 
-//
-//            for (Block block : ModBlocks.getModBlocks()) {
-//                System.out.println("TestModEventHandler.onBlockReg " + block.getRegistryName());
-//                event.getRegistry().register(block);
-//            }
+            for (Block block : ModBlocks.getModBlocks()) {
+                System.out.println("TestModEventHandler.onBlockReg " + block.getRegistryName());
+                event.getRegistry().register(block);
+            }
         }
+
 
     }
 
