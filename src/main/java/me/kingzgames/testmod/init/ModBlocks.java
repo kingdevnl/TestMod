@@ -8,7 +8,6 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class ModBlocks {
@@ -16,33 +15,13 @@ public class ModBlocks {
 
     private static ArrayList<Block> modBlocks = new ArrayList<>();
 
-
     public static TestBlock testBlock = new TestBlock();
-
-    public ModBlocks() {
-        init();
-    }
-
-    private void init() {
-
-        for(Field f : ModBlocks.class.getFields()) {
-            try {
-                Block block = (Block) f.get(Block.class);
-
-                modBlocks.add(block);
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-        }
-
-    }
-
-
-
 
 
     public static void registerRenders() {
-        for(Block i : getModBlocks()) {registerRender(i);}
+        for (Block i : getModBlocks()) {
+            registerRender(i);
+        }
     }
 
     @SideOnly(Side.CLIENT)

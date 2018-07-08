@@ -16,23 +16,6 @@ public class ModItems {
 
     public static TestItem testItem = new TestItem();
 
-    public ModItems() {
-        init();
-    }
-
-    public void init() {
-
-        for (Field f : getClass().getFields()) {
-            try {
-                Item item = (Item) f.get(Item.class);
-                modItems.add(item);
-
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
     public static void registerRenders() {
         for (Item i : getModItems()) {
             registerRender(i);

@@ -1,5 +1,6 @@
 package me.kingzgames.testmod.blocks;
 
+import me.kingzgames.testmod.init.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -11,6 +12,6 @@ public class TestBlock extends Block {
         setRegistryName("testblock");
         setUnlocalizedName("testblock");
         setCreativeTab(CreativeTabs.MISC);
-        System.out.println("TestBlock.TestBlock");
+        ModBlocks.getModBlocks().add(this);
     }
 }

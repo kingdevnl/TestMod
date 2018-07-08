@@ -27,8 +27,6 @@ public class TestMod {
 
     @Mod.EventHandler
     public void onPreInit(FMLPreInitializationEvent e) {
-        new ModItems();
-        new ModBlocks();
         MinecraftForge.EVENT_BUS.register(new TestModEventHandler());
         proxy.onPreInit(e);
     }
