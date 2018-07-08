@@ -6,10 +6,8 @@ import me.kingzgames.testmod.proxy.CommonProxy;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -17,11 +15,19 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Mod(name = Reference.modName, modid = Reference.modID, version = Reference.modVersion)
+@Mod(name = TestMod.modName, modid = TestMod.modID, version = TestMod.modVersion)
 public class TestMod {
 
+    //Reference
+    public static final String modID = "testmod";
+    public static final String modName = "TestMod";
+    public static final String modVersion = "0.1";
 
-    @SidedProxy(modId = Reference.modID, clientSide = "me.kingzgames.testmod.proxy.ClientProxy", serverSide = "me.kingzgames.testmod.proxy.ServerProxy")
+
+    @SidedProxy(
+            modId = TestMod.modID,
+            clientSide = "me.kingzgames.testmod.proxy.ClientProxy",
+            serverSide = "me.kingzgames.testmod.proxy.ServerProxy")
     private static CommonProxy proxy;
 
 
@@ -52,7 +58,7 @@ public class TestMod {
             for (Item item : ModItems.getModItems()) {
                 event.getRegistry().register(item);
             }
-            for(Block b : ModBlocks.getModBlocks()) {
+            for (Block b : ModBlocks.getModBlocks()) {
                 event.getRegistry().register(new ItemBlock(b).setRegistryName(b.getRegistryName()));
             }
         }
